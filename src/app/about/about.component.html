@@ -64,6 +64,11 @@
 <p *ngFor='let obj of arraydata4'> {{obj.name}}</p>
 
 <p *ngFor='let obj of arraydata4 ; index as i'> {{i}} - {{obj.name}}</p>
+<div *ngFor='let obj of arraydata4 ; index as i ;last as last'> 
+  <p [style.color]="last?'pink':'blue'"> 
+    {{i}} - {{obj.name}} 
+  </p>
+</div>
 <!--
 
 <div *ngFor='let obj of arraydata4 ; index as i ;first as first'> 
