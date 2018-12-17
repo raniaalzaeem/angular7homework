@@ -1,0 +1,141 @@
+<div class="container">
+  <div class="title"> about us</div>
+  <div>
+    <img src="../../assets/image/about-banner.jpg" alt="img" class="image" />
+  </div>
+  <div>
+    <p class="content">What is Lorem Ipsum?
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+      a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+    </p>
+  </div>
+</div>
+
+<p>{{title}}</p>
+<p>{{3+7}}</p>
+<p>{{total}}</p>
+<button (click)='BtnClick()'>Submit</button>
+<!-- <app-contact-us></app-contact-us>-->
+
+<div>
+  <nav>
+    <ul>
+      <li><a routerLink="/about"> About </a></li>
+      <li><a routerLink="/contactus"> Contact US</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<p *ngFor='let obj of data'> {{obj.id}} {{obj.name}}</p>
+
+<ul>
+  <li *ngFor='let objdata of data'>{{objdata.name}}</li>
+</ul>
+
+<button (click)='BtnClick1()'>addObj</button>
+<p *ngFor='let obj of arraydata'> {{obj.id}} {{obj.name}}</p>
+
+<br/>
+<br/>
+<button (click)='BtnClick2()'>addobj2</button>
+<p *ngFor='let obj of arraydata1'> {{obj.id}} {{obj.name}}</p>
+
+<br/>
+<br/>
+<input type="text" name="text" id="text4" (keyup.enter)='BtnClick4($event)' />
+<p *ngFor='let obj of arraydata2'> {{obj.name}}</p>
+
+
+<br/>
+<br/>
+<input type="text" name="text" value="" #text5 />
+<button (click)='BtnClick5(text5.value)'>addword</button>
+<p *ngFor='let obj of arraydata3'> {{obj.name}}</p>
+
+<br/>
+<br/>
+<input type="text" name="text" value="" #text6 (keyup.enter)='BtnClick6($event.target)'/>
+<button (click)='BtnClick6(text6)'>add word1</button>
+<p *ngFor='let obj of arraydata4'> {{obj.name}}</p>
+
+<p *ngFor='let obj of arraydata4 ; index as i'> {{i}} - {{obj.name}}</p>
+<!--
+
+<div *ngFor='let obj of arraydata4 ; index as i ;first as first'> 
+  <p [style.color]="first?'pink':'blue'"> 
+    {{i}} - {{obj.name}} 
+  </p> 
+</div>
+
+<div *ngFor='let obj of arraydata4 ; index as i ;last as last'> 
+   <p [style.color]="last?'pink':'blue'"> 
+     {{i}} - {{obj.name}} 
+   </p>
+</div>
+
+-->
+
+<br/>
+<br/>
+<h3> the value is : {{isActive}}</h3>
+<button (click)='BtnClick3()'>change Active</button>
+
+<br/>
+<br/>
+<input type="text" name="text" id="text1" (keyup)='printvalue($event)' />
+
+ <br/>
+ <br/>
+<input type="text" name="text" id="text2" (keyup.enter)='printvalue($event)' />
+
+<br/>
+<br/>
+<input type="text" name="text" id="text3" (keyup.control.m)='ctrlMClicked()' />
+
+<br/>
+<br/>
+<h1 [class.redColor]="isActive" [class.greenColor]="!isActive"> Iam Red </h1>
+
+<br/>
+<br/>
+{{number}}
+
+<br/>
+<br/>
+<input [(ngModel)]='name' />
+<p> Welcom {{name}}</p>
+<button (click)="printname()"> Print My Name </button>
+
+<br/>
+<br/>
+<div *ngIf='isActive'>Iam Active</div>
+<div *ngIf='!isActive'>Iam In Active</div>
+
+<br/>
+<br/>
+<div [ngSwitch]='x'>
+  <div *ngSwitchCase='1'>x=1</div>
+  <div *ngSwitchCase='2'>x=2</div>
+  <div *ngSwitchCase='3'>x=3</div>
+  <div *ngSwitchCase='4'>x=4</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
+
+<br/>
+<br/>
+<button (click)='BtnClick7()'>change x value</button>
+
+
+<div *ngFor='let obj of listdata ; index as i ;first as first; last as last'> 
+      <p [style.color]="first?'pink':'blue'" [style.color]="last?'red':'blue'">
+          {{i}} - {{obj}}
+     </p> 
+</div>
+
+
+
